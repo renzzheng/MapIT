@@ -1,7 +1,7 @@
 // add basic express setup
 import express from "express";
 import cors from "cors";
-import {geocodeRouter} from "./routes/geocode";
+import { geocodeRouter } from "./routes/geocode";
 import path from "path";
 import dotenv from "dotenv";
 

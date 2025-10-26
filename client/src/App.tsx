@@ -22,8 +22,9 @@ function App() {
   return (
     <div className="background">
       <div className="glass">
-        <h1>📍MapIT</h1>
-        <p>Convert addresses into map points instantly!</p>
+        <h1>MapIT</h1>
+        <p className="subtitle">Convert addresses into map points instantly!</p>
+
 
         <textarea
           className="address-input"

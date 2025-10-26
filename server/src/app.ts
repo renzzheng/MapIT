@@ -13,8 +13,6 @@ app.use(express.json({ limit: "1mb" }));
 app.use(express.urlencoded({ extended: true }));
 
 // API routes
-app.use(express.json());
-
 app.use("/api/geocode", geocodeRouter);
 
 // static frontend

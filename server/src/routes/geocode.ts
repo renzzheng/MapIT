@@ -13,11 +13,12 @@ export const geocodeRouter = Router();
 
 /**
  * POST /api/geocode
- * Request body:
- *    { "address": "1600 Pennsylvania Ave NW Washington DC" }
- *
  * Response example:
- *    { "address": "...", "lat": 38.8977, "lng": -77.0365 }
+        {
+            "address": "Santa Monica Beach, Santa Monica, CA",
+            "lat": 34.0003576,
+            "lng": -118.4861734
+        }
  */
 geocodeRouter.post("/", async (req, res) => {
   try {
@@ -42,8 +43,10 @@ geocodeRouter.post("/", async (req, res) => {
     const results = [];
 
     for (const addr of addressList) {
+      
       // encode address for safe URL transmission
       const encoded = encodeURIComponent(addr);
+
       // construct Google Geocoding API request URL
       const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${encoded}&key=${apiKey}`;
 

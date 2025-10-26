@@ -15,7 +15,8 @@ function App() {
 
     const data = await response.json();
     console.log("Backend says:", data);
-    alert(data.message); // temp feedback
+    console.log("Geocode results:", data.results);
+    alert("Geocoded!");    
   };
 
   return (

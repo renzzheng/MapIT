@@ -87,6 +87,12 @@ html, body {
   animation: wobble 0.4s ease-in-out;
 }
 
+.map-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 16px auto;
+}
+
 .glass {
   background: rgba(141, 122, 122, 0.12);
   padding: 32px;

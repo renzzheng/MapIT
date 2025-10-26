@@ -26,7 +26,7 @@ geocodeRouter.post("/", async (req, res) => {
     console.log("Request body:", req.body);
 
 
-    // check for validate input
+    // check for valid input
     if (!address || address.trim().length === 0) {
       return res.status(400).json({ error: "Address is required" });
     }
@@ -43,7 +43,7 @@ geocodeRouter.post("/", async (req, res) => {
     const results = [];
 
     for (const addr of addressList) {
-      
+
       // encode address for safe URL transmission
       const encoded = encodeURIComponent(addr);
 

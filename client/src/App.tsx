@@ -2,9 +2,11 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import MapView from './MapView';
 
 function App() {
   const [text, setText] = useState("");
+  const [mapPoints, setMapPoints] = useState<any[]>([]); // stores lat/lng points returned from backend
 
   const handleGeocode = async () => {
     const response = await fetch("http://localhost:3000/api/geocode", {
@@ -13,10 +15,14 @@ function App() {
       body: JSON.stringify({ address: text }),
     });
 
+    // parse JSON response
     const data = await response.json();
-    console.log("Backend says:", data);
     console.log("Geocode results:", data.results);
-    alert("Geocoded!");    
+
+    // update map points state with valid lat/lng results
+    setMapPoints(
+      data.results?.filter((r: any) => r.lat && r.lng) || []
+    );
   };
 
   return (
@@ -24,7 +30,6 @@ function App() {
       <div className="glass">
         <h1>MapIT</h1>
         <p className="subtitle">Convert addresses into map points instantly!</p>
-
 
         <textarea
           className="address-input"
@@ -36,6 +41,11 @@ function App() {
         <button className="submit-btn" onClick={handleGeocode}>
           GEOCODE
         </button>
+
+        <div className="map-container">
+          <MapView points={mapPoints} />
+        </div>
+
 
         <p style={{
           opacity: 0.6,

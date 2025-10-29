@@ -1,4 +1,6 @@
 # MapIT
+---
+📍  MapIT — Find it. Pin it.
 
 ---
 <p align="center">

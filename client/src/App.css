@@ -1,16 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Badeen+Display&display=swap');
 
-
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: #f8f5e7;
-  /* background-color: #f8fdda; */
-  color: #3b2f2f;
+  background-color: #f8f2dada;
+  color: #3b2f2f; /* thai tea text color */
   font-family: 'Inter', sans-serif;
+  position: relative;
 }
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: url("/textures/paper_texture_3.png") center/cover no-repeat;
+  opacity: 0.8;
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -110,7 +120,9 @@ html, body {
 }
 
 .glass {
-  background: rgba(141, 122, 122, 0.12);
+  background: rgba(175, 154, 154, 0.12) url('/textures/washi_paper.png');
+  background-size: cover;
+  background-blend-mode: overlay;
   padding: 32px;
   border-radius: 25px;
   backdrop-filter: blur(10px);

@@ -1,12 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Rubik+80s+Fade&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Badeen+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 
 html, body {
   margin: 0;
   padding: 0;
   height: 100%;
   background-color: #f8f2dada;
-  color: #3b2f2f; /* thai tea text color */
+  color: #3b2f2f;
   font-family: 'Inter', sans-serif;
   position: relative;
 }
@@ -50,29 +52,33 @@ body::before {
   width: 100%;
 }
 
-.map-text {
-  font-family: "Badeen Display", system-ui, sans-serif;
-  font-size: 80px;
-  color: #EE3F4D;
-  margin-bottom: 8px;
-}
+.map-text,
 .it-text {
   font-family: "Badeen Display", system-ui, sans-serif;
   font-size: 80px;
   color: #EE3F4D;
   margin-bottom: 8px;
+  position: relative;
+  mix-blend-mode: multiply;
+
+  /* deboss text */
+  text-shadow:
+    -1px -1px 1px rgba(0, 0, 0, 0.2),
+     1px  1px 1px rgba(255, 255, 255, 0.7);
 }
+
 
 .subtitle {
   font-size: 0.95rem;
   font-weight: 500;
+  font-family: "Roboto", sans-serif;
   color: #3b2f2f;
   margin-bottom: 14px;
   opacity: 0.85;
 }
 
 .address-input {
-  background-color: #2f2f2f;
+  background-color: #463b37;
   font-family: 'Quicksand', sans-serif;
   font-size: 0.8rem;
   color: #f9f7f0;
@@ -101,7 +107,7 @@ body::before {
 }
 
 .btn:hover {
-  background-color: #e14b4b;
+  background-color: #C9184B;
   animation: wobble 0.4s ease-in-out;
 }
 
@@ -120,8 +126,9 @@ body::before {
 }
 
 .glass {
+  transform-origin: center;
+  transform: scale(0.75);
   background: rgba(175, 154, 154, 0.12) url('/textures/washi_paper.png');
-  background-size: cover;
   background-blend-mode: overlay;
   padding: 32px;
   border-radius: 25px;

@@ -34,17 +34,21 @@ function App() {
         <p className="subtitle">Convert addresses into map points instantly!</p>
         <textarea
           className="address-input"
-          placeholder="Enter addresses or a webpage URL..."
+          placeholder="Enter addresses or a webpage URL with locations..."
           value={text}
           onChange={(e) => setText(e.target.value)}
         ></textarea>
 
         <button className="btn submit" onClick={handleGeocode}>
-          GEOCODE
+          PIN IT FOR ME!
         </button>
 
         <button className="btn export" onClick={handleGeocode}>
           EXPORT TO CSV
+        </button>
+
+        <button className="btn import" onClick={handleGeocode}>
+          IMPORT TO MY GOOGLE MAPS
         </button>
 
         <div className="map-container">

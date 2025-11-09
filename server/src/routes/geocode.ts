@@ -20,11 +20,21 @@ export const geocodeRouter = Router();
             "lng": -118.4861734
         }
  */
+
+// detect if input string is a URL
+function isValidURL(input: string): boolean {
+  try {
+    new URL(input);
+    return true;
+  } catch {
+    return false;
+  }
+}
+
 geocodeRouter.post("/", async (req, res) => {
   try {
     const { address } = req.body;
     console.log("Request body:", req.body);
-
 
     // check for valid input
     if (!address || address.trim().length === 0) {

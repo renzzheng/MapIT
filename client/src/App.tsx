@@ -28,9 +28,10 @@ function App() {
   return (
     <div className="background">
       <div className="glass">
-        <h1>MapIT</h1>
+      <h1>
+        <span className="map-text">Map</span><span className="it-text">IT</span>
+      </h1>
         <p className="subtitle">Convert addresses into map points instantly!</p>
-
         <textarea
           className="address-input"
           placeholder="Enter addresses or a webpage URL..."
@@ -38,8 +39,12 @@ function App() {
           onChange={(e) => setText(e.target.value)}
         ></textarea>
 
-        <button className="submit-btn" onClick={handleGeocode}>
+        <button className="btn submit" onClick={handleGeocode}>
           GEOCODE
+        </button>
+
+        <button className="btn export" onClick={handleGeocode}>
+          EXPORT TO CSV
         </button>
 
         <div className="map-container">

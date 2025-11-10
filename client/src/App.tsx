@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import MapView from './MapView';
+import { exportAddressesToCSV } from "./utils/csvExporter";
 
 function App() {
   const [text, setText] = useState("");
@@ -25,6 +26,11 @@ function App() {
     );
   };
 
+  const handleExport = () => {
+    exportAddressesToCSV(mapPoints);
+  };
+  
+
   return (
     <div className="background">
       <div className="glass">
@@ -43,12 +49,8 @@ function App() {
           PIN IT FOR ME!
         </button>
 
-        <button className="btn export" onClick={handleGeocode}>
+        <button className="btn export" onClick={handleExport}>
           EXPORT TO CSV
-        </button>
-
-        <button className="btn import" onClick={handleGeocode}>
-          IMPORT TO MY GOOGLE MAPS
         </button>
 
         <div className="map-container">

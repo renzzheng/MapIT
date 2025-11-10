@@ -1,4 +1,6 @@
 # create flask app to scrape data from a website and return it as json
+
+
 # from flask import Flask, jsonify
 # from scraper import scrape_data
 # app = Flask(__name__)
@@ -27,4 +29,4 @@ def scrape():
     return jsonify(result)
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5001)
+    app.run(host="0.0.0.0", port=5001, debug=True)

@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Badeen+Display&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
-
 html, body {
   margin: 0;
   padding: 0;
@@ -11,6 +10,11 @@ html, body {
   color: #3b2f2f;
   font-family: 'Inter', sans-serif;
   position: relative;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body::before {
@@ -30,25 +34,31 @@ body::before {
   text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #7e5454;
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
 }
 
 .background {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
 }
 
@@ -60,13 +70,10 @@ body::before {
   margin-bottom: 8px;
   position: relative;
   mix-blend-mode: multiply;
-
-  /* deboss text */
   text-shadow:
     -1px -1px 1px rgba(0, 0, 0, 0.2),
      1px  1px 1px rgba(255, 255, 255, 0.7);
 }
-
 
 .subtitle {
   font-size: 0.95rem;
@@ -89,6 +96,7 @@ body::before {
   margin-bottom: 20px;
   border-radius: 20px;
   outline: none;
+  box-sizing: border-box;
 }
 
 .btn {
@@ -104,6 +112,17 @@ body::before {
   border: none;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+}
+
+.btn.export {
+  background-color: transparent;
+  color: #EE3F4D;
+  border: 1px solid #EE3F4D;
+}
+
+.btn.export:hover {
+  background-color: rgba(238, 63, 77, 0.08);
+  animation: wobble 0.4s ease-in-out;
 }
 
 .btn:hover {
